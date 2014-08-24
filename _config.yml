@@ -1,0 +1,11 @@
+# Site settings
+title: Luke Peeler
+email: peeler.luke@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  I'm a software engineer with passions for food, Netflix show-binging, and using the tremendous power of programming to tackle difficult problems.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://lpeeler.com" # the base hostname & protocol for your site
+github_username:  lukepeeler
+
+# Build settings
+markdown: kramdown
