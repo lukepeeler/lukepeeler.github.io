@@ -8,5 +8,4 @@ permalink: /projects/
 
 [Master's presentation for Bx/MS program at The University of Chicago](http://lukepeeler.github.io/pres/ms_talk.pptx) 
 
-<img src="http://lpeeler.com/imgs/ms-img.png" width="250" align="middle"/>
-<p style="text-align: middle">Distance-encoded rendering of Zebrafish embryo facial branchiomotor neurons</p>
+<img style="float: center" src="http://lpeeler.com/imgs/ms-img.png" width="250" align="middle">
