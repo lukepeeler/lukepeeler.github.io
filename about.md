@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm a recent graduate of The University of Chicago and an avid lover of programming and all its possibilities. I'm currently working in Chicago's Loop for a proprietary trading firm and learning about financial markets, low-latency trading, and all the technologies that support them. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I'm always looking for opportunities to collaborate on new projects, particularly at the intersection of public and social policy and computer science. Feel free to contact me using the information below!
