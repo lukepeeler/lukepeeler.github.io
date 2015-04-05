@@ -67,9 +67,10 @@ def addStudentToStatesList(student, statesList):
 
 
 
-def main():
+def part3_main():
 
 	statesList = stateStatistic(readStudent(), readRegistration(), readCourse(), "Java")
+	print "Part3:\n"
 	print "State".ljust(20) + "Number".ljust(20)        
 	print "=========================="
 	for entry in statesList:
@@ -79,6 +80,6 @@ def main():
 	plotBarChart(statesList)
 
 
-main()
+#part3_main()
 
 

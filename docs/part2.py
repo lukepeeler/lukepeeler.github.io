@@ -32,10 +32,10 @@ def studentsInPython(students, registrations, courses, keyword):
 			printStudent(student)
 
 
-def main():
+def part2_main():
 	print "Part2:\n"
 	print "StudentId".ljust(20) + "StudentName".ljust(20) +  "Gender".ljust(20) +  "FromWhichState".ljust(20)
 	print "==========================================================================="
 	studentsInPython(readStudent(), readRegistration(), readCourse(), "Python")
 
-main()
+#part2_main()

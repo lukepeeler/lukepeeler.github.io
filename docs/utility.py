@@ -110,7 +110,7 @@ def getCourseId(courses, keyword):
         cid = course[0]
         name = course[1]
 
-        if 'Python' in name:
+        if keyword in name:
             return cid
 
 
@@ -123,12 +123,12 @@ def printStudent(student):
 
 
 
-def main():
+def utility_main():
     call1 = readStudent()
     call2 = readCourse()
     call3 = readRegistration()
 
-main()
+#utility_main()
 
 
 

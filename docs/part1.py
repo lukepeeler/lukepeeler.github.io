@@ -16,10 +16,10 @@ def femaleStudents(students):
 
 
 
-def main():
+def part1_main():
 	print "Part1:\n"
 	print "StudentId".ljust(20) + "StudentName".ljust(20) +  "Gender".ljust(20) +  "FromWhichState".ljust(20)
 	print "==========================================================================="
 	femaleStudents(readStudent())
 
-main()
+#part1_main() 
