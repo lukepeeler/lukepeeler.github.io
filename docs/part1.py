@@ -16,15 +16,6 @@ def femaleStudents(students):
 
 
 
-def printStudent(student):
-	sid = student[0]
-	name = student[1]
-	gender = student[2]
-	state = student[3]
-	print(sid.ljust(20) + name.ljust(20) + gender.ljust(20) + state.ljust(20))    
-
-
-
 def main():
 	print "Part1:\n"
 	print "StudentId".ljust(20) + "StudentName".ljust(20) +  "Gender".ljust(20) +  "FromWhichState".ljust(20)

@@ -22,7 +22,7 @@ def studentsInPython(students, registrations, courses, keyword):
 		if cid == keywordCid:
 			sids.append(sid)
 
-	# find which students are includeds in our sids list
+	# find which students are included in our sids list
 	for student in students:
 		sid = student[0]
 

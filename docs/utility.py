@@ -100,6 +100,29 @@ def readRegistration():
     return registrations
 
 
+# find the course id of the course with the keyword in the course name
+# input: courses is a list of lists; each element in courses is a list [cid, cname]
+#        keyword is a string that will be used to get course id for the course with the keyword in the course name
+# return: the course id
+def getCourseId(courses, keyword):
+
+    for course in courses:
+        cid = course[0]
+        name = course[1]
+
+        if 'Python' in name:
+            return cid
+
+
+def printStudent(student):
+    sid = student[0]
+    name = student[1]
+    gender = student[2]
+    state = student[3]
+    print(sid.ljust(20) + name.ljust(20) + gender.ljust(20) + state.ljust(20))    
+
+
+
 def main():
     call1 = readStudent()
     call2 = readCourse()
