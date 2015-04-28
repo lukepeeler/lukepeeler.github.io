@@ -1,134 +1,55 @@
-# read the file into a list called students which is a list of lists
-# each element in students is a list [sid, sname, gender, state]
-# input: fileName is the name of the file you want to read
-# return: the list called students
-def readStudent():
- 
-    # Read the file into list lines
-    f = open("student.txt",'r')
-    lines = f.readlines()
-    f.close()
- 
-    # This is a list of lists
-    studentlist = []
- 
-    # Parse the lines
-    for i in range(len(lines)):
-        # Split line on comma '|'
-        list = lines[i].split('|')
-        sid = list[0].strip().split("=")[1].strip() # LP: since 'split' gives you back an array, you have to use brackets with
-                                                    # indices to get the elements out of it (e.g., [0], [1], etc.)
-                                                    # and in this case, you always want [1], since calling split('=') on something like
-                                                    # 'cid=CS123' gives you an array like ['cid', 'CS123'] and you care about the data
-                                                    # which is at index 1, giving you 'CS123'
-                                                    # LP: and it's a good idea to use 'strip()'
-                                                    # at the end, which removes whitespace at the beginning and end
-                                                    # of a string (e.g., " Charlie Day " becomes "Charlie Day")
-        name = list[1].strip().split("=")[1].strip()
-        gender = list[2].strip().split("=")[1].strip()
-        state = list[3].strip().split("=")[1].strip()
- 
-        entry = [sid, name, gender, state]
- 
-        studentlist.append(entry)
+from graphics import *
 
-
-        # LP: you had the print after the return statement.
-        # the function exits after the return statement, so you didn't see
-        # the list printed out
-
-    # LP: and here, you want these statements not indented under the 'for'
-    # loop, since you want them to happen after it finishes    
-    #print studentlist
-    return studentlist
-        
-
-# read the file into a list called courses which is a list of lists
-# each element in courses is a list [cid, cname]
-# input: fileName is the name of the file you want to read
-# return: the list called courses
-def readCourse():
- 
-    # Read the file into list lines
-    f = open("course.txt","r")
-    lines = f.readlines()
-    f.close()
- 
-    # This is a list of lists
-    courselist = []
- 
-    # Parse the lines
-    for i in range(len(lines)):
-        # Split line on comma '|'
-        list = lines[i].split('|')
-        cid = list[0].strip().split("=")[1].strip()
-        name = list[1].strip().split("=")[1].strip()
- 
-        entry = [cid, name]
- 
-        courselist.append(entry)
- 
-    #print courselist
-    return courselist
-
-# read the file into a list called registrations which is a list of lists
-# each element in registrations is a list [sid, cid, grade]
-# input: fileName is the name of the file you want to read
-# return: the list called registrations
-def readRegistration():
-    # Read the file into list lines
-    f = open("registration.txt","r")
-    lines = f.readlines()
-    f.close()
+# Writes points to a file. If the file already exists, you should overwrite.
+# You can write your points to a file such that all lines will have one point in csv format
+# ========
+# Example:
+# 10.3,5.4
+# 21.2,5.3
+# 5.1,2.7
+# ...
+# ========
+# points: points to be saved, type: list of tuples containing two floats 
+# fileName: file name of the file, type: string
+def savePoints(points, fileName):
+   f = open(fileName, 'w')
+   for i in range(len(points)):
+      file = str(points[i])
+      file = file.replace("[", "")
+      file = file.replace("]", "")
+      f.write(file + '\n')
+   f.close()
+      
    
-    # This is a list of lists
-    registrations = []
+# Reads points from a file. If the file do not exist, return an empty list.
+# fileName: file name of the file, type: string
+# RETURNS: points, type: list of tuples containing two floats
+def readPoints(fileName):
+   f = open(fileName, 'r')
+  
+   lines = f.readlines()
+   list1 = []
+      
+   for line in lines:
+      values = line.split(",")
+      x = float(values[0].strip())
+      y = float(values[1].strip())
+      point = (x,y)
+      list1.append(point)
+      
+   return list1
  
-    # Parse the lines
-    for i in range(len(lines)):
-        # Split line on comma '|'
-        list = lines[i].split('|')
-        sid = list[0].strip().split("=")[1].strip()
-        cid = list[1].strip().split("=")[1].strip()
-        grade = list[2].strip().split("=")[1].strip()
- 
-        entry = [sid, cid, grade]
- 
-        registrations.append(entry)
-    
-    #print registrations
-    return registrations
-
-
-# find the course id of the course with the keyword in the course name
-# input: courses is a list of lists; each element in courses is a list [cid, cname]
-#        keyword is a string that will be used to get course id for the course with the keyword in the course name
-# return: the course id
-def getCourseId(courses, keyword):
-
-    for course in courses:
-        cid = course[0]
-        name = course[1]
-
-        if keyword in name:
-            return cid
-
-
-def printStudent(student):
-    sid = student[0]
-    name = student[1]
-    gender = student[2]
-    state = student[3]
-    print(sid.ljust(20) + name.ljust(20) + gender.ljust(20) + state.ljust(20))    
-
-
-
-def utility_main():
-    call1 = readStudent()
-    call2 = readCourse()
-    call3 = readRegistration()
-
-#utility_main()
-
-
-
+# Plots given points to the given window with the given color.
+# You can plot small Circle's to make your points visible.
+# points: points to be plotted, type: list of tuples containing two floats 
+# win: window object to plot points on, type: GraphWin
+# color: color of the points, type: string
+def plotPoints(points, win, color):
+   for i in range(len(points)):
+      pointC = points[i]
+      x = pointC[0]
+      y = pointC[1]
+      point1 = Point(x,y)
+      c = Circle(point1, 5)
+      c.setFill(color)
+      c.draw(win)
